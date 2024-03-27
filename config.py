@@ -12,7 +12,7 @@ BOT_TOKEN = getenv("BOT_TOKEN", "6508386922:AAHGBnAmLamSBepKePQKjdegivlYV0baK08"
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://hamza49:<hamza124>@cluster0.2u8tp5d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
 LOGGER_ID = int(getenv("LOGGER_ID", "-1001805137487"))
-OWNER_ID = int(getenv("OWNER_ID",6927847243 ))
+OWNER_ID = int(getenv("OWNER_ID",6927847243))
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
     "https://github.com/hamza49490/pi",)
