@@ -6,21 +6,20 @@ from pyrogram import filters
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH", "")
-BOT_TOKEN = getenv("BOT_TOKEN", "")
-MONGO_DB_URI = getenv("MONGO_DB_URI", "")
+API_ID = int(getenv("API_ID", "29462790"))
+API_HASH = getenv("API_HASH", "1fb6a2326a52026dfdb1352f9d065856")
+BOT_TOKEN = getenv("BOT_TOKEN", "6508386922:AAHGBnAmLamSBepKePQKjdegivlYV0baK08")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://hamza49:<hamza124>@cluster0.2u8tp5d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 500))
-LOGGER_ID = int(getenv("LOGGER_ID", ""))
-OWNER_ID = int(getenv("OWNER_ID", ))
+LOGGER_ID = int(getenv("LOGGER_ID", "-1001805137487"))
+OWNER_ID = int(getenv("OWNER_ID",6927847243 ))
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "",
-)
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/")
+    "https://github.com/hamza49490/pi",)
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/askkoleji")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/konnusanlar")
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
-STRING1 = getenv("STRING_SESSION", "")
+STRING1 = getenv("STRING_SESSION", "BAARbEZLpn8UffUPzx73QNiMu_gxzWwOUBnWuvyCCTaLMcom72mRtsC6qdopCKfOlEkXjjo1_8zM4GjTRWYj30d-2K99esuYBHiqiJRtugfjaPIblfnTHq3MNr6vQWTKEwEIpv-l7cuUKPE9YrMbBFDXaHZNcI-4b5Bzxto4eztemiKlarmrE4edtP_eD-RfRPMQaHGzQy8Lu23VkrFvxidx61GH4LeQI4_iz8BhOYnHpKKdthOvs-ZqhCIS4NM8GY4HFPD3QZep5mdA0pn7B0LeGZ_rcuU5B3KALnVVVnb8UpCT-KO4fngex0XqV8ZrS4OD-ym4lAAtIQtUNWs8kIp3AAAAAXYax0YA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
