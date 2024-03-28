@@ -78,7 +78,7 @@ class Userbot(Client):
                 pass
             assistants.append(2)
             try:
-                await self.two.send_message(config.LOGGER_ID, "➻ 𝖠𝗌𝗂𝗌𝗍𝖺𝗇 𝖺𝗄𝗍𝗂𝖿 𝖾𝖽𝗂𝗅𝖽𝗂 ...\n𝖸𝖺𝗋𝖽ı𝗆 ➻ @BotsDestek")
+                await self.two.send_message(config.LOGGER_ID, "➻ 𝖠𝗌𝗂𝗌𝗍𝖺𝗇 𝖺𝗄𝗍𝗂𝖿 𝖾𝖽𝗂𝗅𝖽𝗂 ...\n𝖸𝖺𝗋𝖽ı𝗆 ➻ @r0r0xx")
             except:
                 LOGGER(__name__).error(
                     "2. 𝖠𝗌𝗂𝗌𝗍𝖺𝗇ı 𝖫𝗈𝗀 𝖦𝗋𝗎𝖻𝗎𝗇𝖺 𝖤𝗄𝗌̧𝖾𝗒𝗂𝗉 𝖸𝗈̈𝗇𝖾𝗍𝗂𝖼𝗂 𝖸𝖺𝗉ı𝗇 !"
@@ -99,7 +99,7 @@ class Userbot(Client):
                 pass
             assistants.append(3)
             try:
-                await self.three.send_message(config.LOGGER_ID, "➻ 𝖠𝗌𝗂𝗌𝗍𝖺𝗇 𝖺𝗄𝗍𝗂𝖿 𝖾𝖽𝗂𝗅𝖽𝗂 ...\n𝖸𝖺𝗋𝖽ı𝗆 ➻ @BotsDestek")
+                await self.three.send_message(config.LOGGER_ID, "➻ 𝖠𝗌𝗂𝗌𝗍𝖺𝗇 𝖺𝗄𝗍𝗂𝖿 𝖾𝖽𝗂𝗅𝖽𝗂 ...\n𝖸𝖺𝗋𝖽ı𝗆 ➻ @r0r0xx")
             except:
                 LOGGER(__name__).error(
                     "3. 𝖠𝗌𝗂𝗌𝗍𝖺𝗇ı 𝖫𝗈𝗀 𝖦𝗋𝗎𝖻𝗎𝗇𝖺 𝖤𝗄𝗌̧𝖾𝗒𝗂𝗉 𝖸𝗈̈𝗇𝖾𝗍𝗂𝖼𝗂 𝖸𝖺𝗉ı𝗇 !"
@@ -120,7 +120,7 @@ class Userbot(Client):
                 pass
             assistants.append(4)
             try:
-                await self.four.send_message(config.LOGGER_ID, "➻ 𝖠𝗌𝗂𝗌𝗍𝖺𝗇 𝖺𝗄𝗍𝗂𝖿 𝖾𝖽𝗂𝗅𝖽𝗂 ...\n𝖸𝖺𝗋𝖽ı𝗆 ➻ @BotsDestek")
+                await self.four.send_message(config.LOGGER_ID, "➻ 𝖠𝗌𝗂𝗌𝗍𝖺𝗇 𝖺𝗄𝗍𝗂𝖿 𝖾𝖽𝗂𝗅𝖽𝗂 ...\n𝖸𝖺𝗋𝖽ı𝗆 ➻ @r0r0xx")
             except:
                 LOGGER(__name__).error(
                     "4. 𝖠𝗌𝗂𝗌𝗍𝖺𝗇ı 𝖫𝗈𝗀 𝖦𝗋𝗎𝖻𝗎𝗇𝖺 𝖤𝗄𝗌̧𝖾𝗒𝗂𝗉 𝖸𝗈̈𝗇𝖾𝗍𝗂𝖼𝗂 𝖸𝖺𝗉ı𝗇 !"
