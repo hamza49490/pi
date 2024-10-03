@@ -1,6 +1,3 @@
-python
-
-import asyncio
 import shlex
 from typing import Tuple
 from git import Repo
@@ -29,10 +26,12 @@ def install_req(cmd: str) -> Tuple[str, str, int, int]:
 def update_git_repository():
     REPO_LINK = config.UPSTREAM_REPO
     UPSTREAM_REPO = REPO_LINK
-    if config.GIT_TOKEN:
+    GITHUB_TOKEN = config.GITHUB_TOKEN  # Çevresel değişkeni burada alıyoruz
+
+    if GITHUB_TOKEN:
         GIT_USERNAME = REPO_LINK.split("com/")[1].split("/")[0]
         TEMP_REPO = REPO_LINK.split("https://")[1]
-        UPSTREAM_REPO = f"https://{GIT_USERNAME}:{config.GIT_TOKEN}@{TEMP_REPO}"
+        UPSTREAM_REPO = f"https://{GIT_USERNAME}:{GITHUB_TOKEN}@{TEMP_REPO}"
 
     try:
         repo = Repo()
