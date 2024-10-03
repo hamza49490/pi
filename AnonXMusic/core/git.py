@@ -1,14 +1,12 @@
+python
+
 import asyncio
 import shlex
 from typing import Tuple
-
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
-
 import config
-
 from ..logging import LOGGER
-
 
 def install_req(cmd: str) -> Tuple[str, str, int, int]:
     async def install_requirements():
@@ -28,44 +26,37 @@ def install_req(cmd: str) -> Tuple[str, str, int, int]:
 
     return asyncio.get_event_loop().run_until_complete(install_requirements())
 
-
-def git():
+def update_git_repository():
     REPO_LINK = config.UPSTREAM_REPO
+    UPSTREAM_REPO = REPO_LINK
     if config.GIT_TOKEN:
         GIT_USERNAME = REPO_LINK.split("com/")[1].split("/")[0]
         TEMP_REPO = REPO_LINK.split("https://")[1]
         UPSTREAM_REPO = f"https://{GIT_USERNAME}:{config.GIT_TOKEN}@{TEMP_REPO}"
-    else:
-        UPSTREAM_REPO = config.UPSTREAM_REPO
+
     try:
         repo = Repo()
-        LOGGER(__name__).info(f"𝖦𝗂𝗍 𝗂𝗌𝗍𝖾𝗆𝖼𝗂𝗌𝗂 𝖻𝗎𝗅𝗎𝗇𝖽𝗎 [ 𝖵𝖯𝖲 𝖣𝖤𝖯𝖫𝖮𝖸𝖤𝖱 ]")
+        LOGGER("Git").info("Git repository already initialized.")
     except GitCommandError:
-        LOGGER(__name__).info(f"Invalid Git Command")
+        LOGGER("Git").info("Invalid Git Command")
     except InvalidGitRepositoryError:
         repo = Repo.init()
-        if "origin" in repo.remotes:
-            origin = repo.remote("origin")
-        else:
-            origin = repo.create_remote("origin", UPSTREAM_REPO)
+        origin = repo.create_remote("origin", UPSTREAM_REPO)
         origin.fetch()
-        repo.create_head(
-            config.UPSTREAM_BRANCH,
-            origin.refs[config.UPSTREAM_BRANCH],
-        )
-        repo.heads[config.UPSTREAM_BRANCH].set_tracking_branch(
-            origin.refs[config.UPSTREAM_BRANCH]
-        )
+        repo.create_head(config.UPSTREAM_BRANCH, origin.refs[config.UPSTREAM_BRANCH])
+        repo.heads[config.UPSTREAM_BRANCH].set_tracking_branch(origin.refs[config.UPSTREAM_BRANCH])
         repo.heads[config.UPSTREAM_BRANCH].checkout(True)
         try:
             repo.create_remote("origin", config.UPSTREAM_REPO)
         except BaseException:
             pass
+
         nrs = repo.remote("origin")
         nrs.fetch(config.UPSTREAM_BRANCH)
         try:
             nrs.pull(config.UPSTREAM_BRANCH)
-        except GitCommandError:
+        except GitCommandError as e:
+            LOGGER("Git").error(f"Error during pull: {e}")
             repo.git.reset("--hard", "FETCH_HEAD")
         install_req("pip3 install --no-cache-dir -r requirements.txt")
-        LOGGER(__name__).info(f"Fetching updates from upstream repository...")
+        LOGGER("Git").info("Fetching updates from upstream repository...")
